@@ -16,7 +16,7 @@
 
 # Description
 
-Здесь представлен "Простейший калькулятор" на python
+Here is the "Simplest Calculator" in python
 
 # Testing 
 
