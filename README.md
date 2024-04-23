@@ -30,7 +30,7 @@ Get [pytest](https://docs.pytest.org/en/7.2.x/)
 
 Make sure [git](https://git-scm.com/) is installed on your system. In bash-shell execute:
 
-    git clone git@github.com:Darya778/setup_test
+    git clone https://github.com/Darya778/setup_test
     cd setup_test
     pip install .
 
