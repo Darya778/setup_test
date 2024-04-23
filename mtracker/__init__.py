@@ -1,22 +1,51 @@
-from urllib import urlopen         # из модуля urllib импортируем функцию urlopen
-
-u = urlopen("http://python.org")    # открываем URL на чтение
-words = {}                          # связываем имя words с пустым словарём
-                                    # (словарь — неупорядоченный [[ассоциативный массив]])
-for line in u:          # читаем u по строкам
-    line = line.strip(" \n")    # отбрасываем начальные и конечные пробелы
-    for word in line.split(" "): # режем каждую строку на слова, ограниченные пробелами
-        try:                            # блок обработки исключений
-            words[word] += 1            # пытаемся увеличить words[word] на единицу
-        except KeyError:                # если не получилось (раньше words[word] не было)
-            words[word] = 1             # присваиваем единицу
-
-# теперь словарь words содержит частоту встречаемости каждого слова.
-# Например, words может содержать {"яблоко":5, "апельсин": 12, "груша": 8}
-
-pairs = words.items()               # делаем из словаря список пар
-                                    # pairs == [("яблоко",5), ("апельсин",12), ("груша",8)]
-pairs.sort(key=lambda x: x[1], reverse=True)  # сортируем по убыванию второго элемента пары
-
-for p in pairs[:10]:                # печатаем первые 10 элементов списка
-    print(p[0], p[1])
+<strong><em>from </em></strong>random <strong><em>import </em></strong>shuffle
+# Кол-во попыток.
+turns = 10
+ 
+print(f"Привет, Давай сыграем в виселицу! У тебя есть {turns} попыток!")
+ 
+# Список слов, которые участвуют в игре.
+wordList = ["geekflare", "awesome", "python", "magic"]
+# Перемешиваем список.
+shuffle(wordList)
+# Берем последнее слово из списка.
+word = wordList.pop()
+ 
+guesses = ""
+ 
+# Цикл, который будет работать, пока не останется попыток или не отгаданных букв.
+<strong><em>while </em></strong>turns > 0:
+   wrong = 0
+ 
+   <strong><em>for </em></strong>char <strong><em>in </em></strong>word:
+       <strong><em>if </em></strong>char <strong><em>in </em></strong>guesses:
+           print(char, end=" ")
+       <strong><em>else</em></strong>:
+           print("_", end=" ")
+           wrong += 1
+ 
+   print("\n")
+ 
+   <strong><em>if </em></strong>wrong == 0:
+       print("Ты выиграл! :)")
+ 
+       <strong><em>break</em></strong>
+ 
+<strong><em>   </em></strong>print()
+ 
+   guess = ""
+   <strong><em>if </em></strong>len(guess) < 1:
+       guess = input("Впиши букву и нажми enter: ")[0]
+ 
+   <strong><em>if </em></strong>guess <strong><em>in </em></strong>guesses:
+       print("Эта буква уже была!")
+   guesses += guess
+ 
+   <strong><em>if </em></strong>guess <strong><em>not in </em></strong>word:
+       turns -= 1
+ 
+       print("Упс! Ошибка")
+       print(f"У тебя осталось {turns} попыток")
+ 
+       <strong><em>if </em></strong>turns == 0:
+           print("Ты проиграл! :(")
