@@ -1,5 +1,4 @@
 from setuptools import setup
-from pip.req import parse_requirements
 
 setup(
    name='mtracker',
@@ -10,7 +9,7 @@ setup(
    author_email='darya.n.2004@mail.com',
    url='https://github.com/Darya778/setup_test',
    packages=['mtracker'], 
-   install_requires=parse_requirements('requirements.txt', session='hack'),
+   install_requires=[],
    extras_require={
         'test': [
             'pytest',
