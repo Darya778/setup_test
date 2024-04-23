@@ -1,4 +1,4 @@
-# mtracker
+# setup_test
 
 Decorator to trace the memory use.
 
@@ -17,14 +17,14 @@ Decorator to trace the memory use.
 
 # Description
 
-Use it to track the memory used by functions in your code. This project is a part of FOSS course and placed here to show how we can build library out of our code. 
+Здесь представлен "Простейший калькулятор" на python
 
 # Testing 
 
 Get [pytest](https://docs.pytest.org/en/7.2.x/)
 
-    git clone git@github.com:standlab/mtracker.git
-    cd mtracker
+    git clone git@github.com:Darya778/setup_test.git
+    cd setup_test
     pytest
 
 # Installation
@@ -32,16 +32,16 @@ Get [pytest](https://docs.pytest.org/en/7.2.x/)
 Make sure [git](https://git-scm.com/) is installed on your system. In bash-shell execute:
 
     git clone git@github.com:Darya778/setup_test
-    cd mtracker
+    cd setup_test
     pip install .
 
 Or simply:
 
-    pip install git+https://github.com/Darya778/setup_test#egg=mtracker
+    pip install git+https://github.com/Darya778/setup_test#egg=setup_test
     
 Remove the matracker:
 
-    pip uninstall mtracker
+    pip uninstall setup_test
 
 # Contribute
 
@@ -49,5 +49,5 @@ You can contribute to the project by writing more tests and check memory trackin
 
 # License
 
-The mtracker is licensed under the terms of the MIT Open Source license and is available for free.
+The setup_test is licensed under the terms of the MIT Open Source license and is available for free.
 
