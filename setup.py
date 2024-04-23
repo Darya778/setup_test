@@ -1,15 +1,16 @@
 from setuptools import setup
+from pip.req import parse_requirements
 
 setup(
    name='mtracker',
    version='1.0',
    description='Provides a decorator for memory usage tracking. The part of FOSS course.',
    license='MIT',
-   author='Artem Vesnin',
-   author_email='artemvesnin@gmail.com',
-   url='https://github.com/standlab/mtracker',
+   author='Darya Nikiforova',
+   author_email='darya.n.2004@mail.com',
+   url='https://github.com/Darya778/setup_test',
    packages=['mtracker'], 
-   install_requires=[], # it is empty since we use standard python library
+   install_requires=parse_requirements('requirements.txt', session='hack'),
    extras_require={
         'test': [
             'pytest',
