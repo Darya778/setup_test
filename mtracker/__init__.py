@@ -1,51 +1,19 @@
-<strong><em>from </em></strong>random <strong><em>import </em></strong>shuffle
-# Кол-во попыток.
-turns = 10
- 
-print(f"Привет, Давай сыграем в виселицу! У тебя есть {turns} попыток!")
- 
-# Список слов, которые участвуют в игре.
-wordList = ["geekflare", "awesome", "python", "magic"]
-# Перемешиваем список.
-shuffle(wordList)
-# Берем последнее слово из списка.
-word = wordList.pop()
- 
-guesses = ""
- 
-# Цикл, который будет работать, пока не останется попыток или не отгаданных букв.
-<strong><em>while </em></strong>turns > 0:
-   wrong = 0
- 
-   <strong><em>for </em></strong>char <strong><em>in </em></strong>word:
-       <strong><em>if </em></strong>char <strong><em>in </em></strong>guesses:
-           print(char, end=" ")
-       <strong><em>else</em></strong>:
-           print("_", end=" ")
-           wrong += 1
- 
-   print("\n")
- 
-   <strong><em>if </em></strong>wrong == 0:
-       print("Ты выиграл! :)")
- 
-       <strong><em>break</em></strong>
- 
-<strong><em>   </em></strong>print()
- 
-   guess = ""
-   <strong><em>if </em></strong>len(guess) < 1:
-       guess = input("Впиши букву и нажми enter: ")[0]
- 
-   <strong><em>if </em></strong>guess <strong><em>in </em></strong>guesses:
-       print("Эта буква уже была!")
-   guesses += guess
- 
-   <strong><em>if </em></strong>guess <strong><em>not in </em></strong>word:
-       turns -= 1
- 
-       print("Упс! Ошибка")
-       print(f"У тебя осталось {turns} попыток")
- 
-       <strong><em>if </em></strong>turns == 0:
-           print("Ты проиграл! :(")
+def f(x: int):
+    if x != -1:
+        x += 1
+    return x
+def sapper(arr: list, mini: list):
+    for x, y in mini:
+        arr[x][y] = -1
+        for i in [-1,0,1]:
+            for j in [-1,0,1]:
+                arr[x+i][y+j] = f(arr[x+i][y+j])
+    return arr
+n, m, k = map(int, input('Введите размер поля и кол-во мин (x y n): ').split())
+n += 2
+m += 2
+mini = [[int(input()) for c in range(2)] for k in range(k)]
+arr = [[0 for j in range(m)] for i in range(n)]
+arr = sapper(arr, mini)
+for i in range(1, n-1):
+    print(*arr[i][1:m-1])
