@@ -36,7 +36,7 @@ Make sure [git](https://git-scm.com/) is installed on your system. In bash-shell
 
 Or simply:
 
-    pip install git+https://github.com/Darya778/setup_test#egg=setup_test
+    pip install -e git+https://github.com/Darya778/setup_test#egg=setup_test
     
 Remove the matracker:
 
