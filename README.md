@@ -32,7 +32,7 @@ Make sure [git](https://git-scm.com/) is installed on your system. In bash-shell
 
     git clone https://github.com/Darya778/setup_test
     cd setup_test
-    pip install .
+    python setup.py
 
 Or simply:
 
