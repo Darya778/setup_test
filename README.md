@@ -22,7 +22,7 @@ Here is the "Simplest Calculator" in python
 
 Get [pytest](https://docs.pytest.org/en/7.2.x/)
 
-    git clone git@github.com:Darya778/setup_test.git
+    git clone https://github.com:Darya778/setup_test.git
     cd setup_test
     pytest
 
